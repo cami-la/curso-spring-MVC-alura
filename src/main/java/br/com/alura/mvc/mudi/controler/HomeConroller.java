@@ -14,11 +14,11 @@ import br.com.alura.mvc.mudi.repository.PedidoRepository;
 public class HomeConroller {
 	
 	@Autowired
-	private PedidoRepository repository;
+	private PedidoRepository pedidoRepository;
 	
 	@GetMapping("/home")
 	public String home(Model model) {
-		List<Pedido> pedidos = repository.recuperaTodosOsPedidos();		
+		List<Pedido> pedidos = pedidoRepository.findAll();		
 		model.addAttribute("pedidos", pedidos);
 
 		return "home"; // referente a página home.hml
