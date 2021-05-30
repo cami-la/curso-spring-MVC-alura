@@ -6,23 +6,42 @@
 	rel="stylesheet"
 	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
+<style>
+	.Logo-container {
+		background-color: #47bcff;
+		color: #FFF;
+	}
+	.Logo {
+		font-family: 'Handlee', cursive;
+		font-size: 2.5rem;
+	}
+</style>
 </head>
 <body>
-	<div class="container">
-	<div class="container-fluid bg-dark text-light p-5">
-		<h1 class="display-4">Meus Pedidos</h1>
+	<div class="Logo-container d-flex justify-content-between mb-3 p-3">
+		<span class="Logo">mudi</span>
+		<span class=mt-3>login</span>
 	</div>
-	
-		<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+
+	<div class="container">
+		<div class="container-fluid bg-dark text-light p-5">
+			<h1 class="display-4">Meus Pedidos</h1>
+		</div>
+
+		<nav
+			class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 			<div class="navbar-nav">
 				<a class="nav-item nav-link active" href="">Todos</a> 
-				<a class="nav-item nav-link" href="">Aguardando</a> 
+				<a class="nav-item nav-link" href="">Aguardando</a>
 				<a class="nav-item nav-link" href="">Aprovado</a> 
 				<a class="nav-item nav-link" href="">Entregue</a>
 			</div>
-			    <a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+			<a href="/pedido/formulario"> <button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 		</nav>
-		
+
 		<div class="card mb-3" th:each="pedido : ${pedidos}">
 			<div class="card-header" th:text="${pedido.nomeProduto}">Nome
 				do produto</div>
