@@ -2,35 +2,39 @@
 <head th:replace="~{base :: head}"></head>
 
 <body>
+	
 	<div th:replace="~{base :: logo}"></div>
 
 	<div th:replace="~{base :: titulo('Novo Pedido')}"></div>
-
-	<div class="mb-3>">
-		<form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
-			<div class="form-group">
+	
+	<div class="card mt-3">
+	
+		<form th:object="${requisicaoNovoPedido}" class="card-body " action="/pedido/novo" method="POST">
+			<div class="form-group mb-2">
 				<label for="nomeProduto">Produto</label> 
-				<input name="nomeProduto" placeholder="nome do produto" /> 
+				<input th:field="*{nomeProduto}" class="form-control" placeholder="nome do produto" /> 
 				<small>Informa qual o nome do produto.</small>
 			</div>
-			<div>
+			<div class="form-group mb-2">
 				<label for="urlProduto">Url</label> 
-				<input name="urlProduto" placeholder="url do produto" /> 
+				<input th:field="*{urlProduto}" class="form-control" placeholder="url do produto" /> 
 				<small>Procure em um site o	produto que você deseja e cole a url da página aqui.</small>
 			</div>
-			<div>
+			<div class="form-group mb-2">
 				<label for="urlImagem">Imagem</label> 
-				<input name="urlImagem" placeholder="url da imagem" /> 
+				<input th:field="*{urlImagem}" class="form-control" placeholder="url da imagem" /> 
 				<small>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir compradores. </small>
 			</div>
-			<div>
+			<div class="form-group mb-2">
 				<label for="descricao">Descrição</label> 
-				<input name="descricao" placeholder="Adicione detalhes importantes para ajudar o comprador." />
-				<textarea>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir compradores.</textarea>
+				<textarea class="form-control" name="descricao" placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
 			</div>
-			<button type="submit">Cadastrar</button>
+			<button class="btn btn-primary mt-2" type="submit">Cadastrar</button>
 		</form>
-	</div>
+		 </div>
+
+		
+
 </body>
 </html>
 
